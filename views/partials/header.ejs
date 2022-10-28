@@ -7,4 +7,9 @@
   <body>
     <nav>
       <a href="/">HOME</a>
+      <% if (user) { %>
+        <a href="/logout">LOG OUT</a>
+      <% } else { %>
+        <a href="/oauth/google" class="login">LOG IN</a>
+      <% } %>
     </nav>
