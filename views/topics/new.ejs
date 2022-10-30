@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<form action="/boards/<%= board._id %>/topics" method="POST">
+  <label for="">Name:</label>
+  <input type="text" name="name" />
+  <label for="">Image-url:</label>
+  <input type="text" name="imageURL" />
+  <label for="">Description:</label>
+  <input type="text" name="description" />
+  <label for="">Gender</label>
+  <select name="gender" id="">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+  </select>
+  <label for="">Age</label>
+  <input type="number" name="age" />
+  <button type="submit">ADD TOPIC</button>
+</form>
+
+<%- include('../partials/footer') %>

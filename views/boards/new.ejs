@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+<form action="/boards" method="POST">
+  <label>Name of the Board:</label>
+  <input type="text" name="title" />
+  <label>Provide an Image URL for the Banner:</label>
+  <input type="text" name="imageURL" />
+  <button type="submit">ADD BOARD</button>
+</form>
+<%- include('../partials/footer') %>

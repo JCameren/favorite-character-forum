@@ -1,12 +1,12 @@
 var express = require("express");
 var router = express.Router();
 var passport = require("passport");
+var Board = require('../models/board')
 
-router.get("/", function (req, res, next) {
-  res.render("index", {
-    title: 'Home Page'
-  });
-});
+router.get('/', async function index(req, res) {
+  const boards = await Board.find({});
+  return res.render("index", { title: "Home", boards });
+})
 
 router.get(
   "/oauth/google",

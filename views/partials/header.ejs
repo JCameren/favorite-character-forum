@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title><%= title %> | Character Forum</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <nav>
       <a href="/">HOME</a>
       <% if (user) { %>
+        <a href="/boards/new">NEW BOARD</a>
         <a href="/logout">LOG OUT</a>
       <% } else { %>
         <a href="/oauth/google" class="login">LOG IN</a>

@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+<h2><%= title %> Characters</h2>
+<% if (topics.length) { %>
+<ul>
+  <% topics.forEach(function(topic) { %>
+  <li>
+    <a href="/boards/<%= board._id %>/topics/<%= topic._id %>">
+      <%= topic.name %> <br />
+      <img src="<%= topic.imageURL %>" alt="character image" />
+    </a>
+  </li>
+  <% }) %>
+</ul>
+<% } else { %>
+<h3>No Topics.</h3>
+<% }%>
+<a href="/boards/<%= board._id %>/topics/new">NEW TOPIC</a>
+<%- include('../partials/footer') %>
