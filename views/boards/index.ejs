@@ -9,9 +9,14 @@
       <img src="<%= topic.imageURL %>" alt="character image" />
     </a>
     <% if (user?._id.equals(topic.user)) { %>
+      <div style="background-color: blue;">
       <form action="/boards/<%= board._id %>/topics/<%= topic._id %>?_method=DELETE" method="POST">
         <button type="submit">DELETE TOPIC</button>
       </form>
+    </div>
+    <div style="background-color: red;">
+      <a href="/topics/<%= topic._id %>/edit">EDIT TOPIC</a>
+    </div>
     <% } %>
   </li>
   <% }) %>

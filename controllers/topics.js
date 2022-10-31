@@ -7,11 +7,30 @@ module.exports = {
   createComment,
   show,
   delete: deleteTopic,
+  edit,
+  update,
 };
+
+async function edit(req, res) {
+  const topic = await Topic.findById(req.params.id);
+  return res.render("topics/edit", { title: "Edit Topic", topic });
+}
 
 async function newTopic(req, res) {
   const board = await Board.findById(req.params.id);
   return res.render("topics/new", { title: "New Topic", board });
+}
+
+async function update(req, res) {
+  const topic = await Topic.findById(req.params.id);
+  topic.name = req.body.name;
+  topic.imageURL = req.body.imageURL;
+  topic.description = req.body.description;
+  topic.gender = req.body.gender;
+  topic.age = req.body.age;
+  topic.save(function (err) {
+    return res.redirect(`/boards/${topic.board}/topics`);
+  });
 }
 
 function create(req, res) {
@@ -57,7 +76,7 @@ async function show(req, res) {
 
 function deleteTopic(req, res) {
   Topic.findOneAndDelete({ _id: req.params.topicId }).then(function () {
-    Board.findById(req.params.id, function(err, board) {
+    Board.findById(req.params.id, function (err, board) {
       board.topics.remove(req.params.topicId);
       board.save().then(function () {
         return res.redirect(`/boards/${req.params.id}/topics`);
