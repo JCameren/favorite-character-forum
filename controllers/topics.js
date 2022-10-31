@@ -48,15 +48,6 @@ async function createComment(req, res) {
       res.redirect(`/boards/${topic.board}/topics/${req.params.id}`);
     });
   });
-  // Board.findById(req.params.id, function (err, board) {
-  //     Topic.find({ board: req.params.id }, function (err, topics) {
-  //       res.render("boards/index", {
-  //         title: board.title,
-  //         board,
-  //         topics,
-  //       });
-  //     });
-  //   });
 }
 
 async function show(req, res) {
@@ -64,40 +55,7 @@ async function show(req, res) {
   return res.render("topics/show", { title: topic.name, topic });
 }
 
-// function deleteTopic(req, res, next) {
-//   Board.findOne({
-//     "topics._id": req.params.topicId,
-//     "topics.user": req.user._id,
-//   }).then(function(board) {
-//     board.topics.remove(req.params.id)
-//     board.save().then(function() {
-//       res.redirect(`/boards/${req.params.id}/topics`)
-//     }).catch(function(err) {
-//       return next(err)
-//     })
-//   })
-// }
-// function deleteTopic(req, res) {
-// Topic.findById(req.params.topicId).then(function(topic) {
-//   topic.board.remove(req.params.id).then(function() {
-//     res.redirect(`/boards/${req.params.id}/topics`)
-//   })
-// })
-// }
-
 function deleteTopic(req, res) {
-  // Board.findById(req.params.id, function (err, board) {
-  //   Topic.find({ board: req.params.id }, function (err, topics) {
-  //     res.render("boards/index", {
-  //       title: board.title,
-  //       board,
-  //       topics,
-  //     });
-  //   });
-  // });
-  // Board.findById(req.params.id, function(err, board) {
-  //   board.topics
-  // })
   Topic.findOneAndDelete({ _id: req.params.topicId }).then(function () {
     Board.findById(req.params.id, function(err, board) {
       board.topics.remove(req.params.topicId);
