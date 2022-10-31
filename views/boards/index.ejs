@@ -8,6 +8,11 @@
       <%= topic.name %> <br />
       <img src="<%= topic.imageURL %>" alt="character image" />
     </a>
+    <% if (user?._id.equals(topic.user)) { %>
+      <form action="/boards/<%= board._id %>/topics/<%= topic._id %>?_method=DELETE" method="POST">
+        <button type="submit">DELETE TOPIC</button>
+      </form>
+    <% } %>
   </li>
   <% }) %>
 </ul>

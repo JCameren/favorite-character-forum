@@ -17,9 +17,17 @@
 
 <% if (topic.comments.length) { %>
 <% topic.comments.forEach(function(comment) { %>
+    <div style="background-color: green;">
     <img src="<%= comment.userAvatar %>" alt="avatar" referrerpolicy="no-referrer">
     <p><%= comment.userName %></p>
     <p><%= comment.post %></p>
+    <% if(user?._id.equals(comment.user)) { %>
+        <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+            <button>DELETE</button>
+        </form>
+        <!-- <a href="/comments/<%= comment._id %>/edit">EDIT</a> -->
+    <% } %>
+</div>
 <% }) %>
 <% } else { %>
 <h3>No comments yet. Be the first!</h3>

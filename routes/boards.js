@@ -5,7 +5,7 @@ var ensureLoggedIn = require("../config/ensureLoggedIn");
 
 router.get("/new", ensureLoggedIn, boardsCtrl.new);
 
-router.get('/:id/topics', ensureLoggedIn, boardsCtrl.index)
+router.get('/:id/topics', boardsCtrl.index)
 
 router.post("/", boardsCtrl.create);
 

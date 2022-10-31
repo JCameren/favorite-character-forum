@@ -11,4 +11,7 @@ router.post('/boards/:id/topics', ensureLoggedIn, topicsCtrl.create)
 
 router.post('/topics/:id/comment', ensureLoggedIn, topicsCtrl.createComment)
 
+router.delete('/boards/:id/topics/:topicId', ensureLoggedIn, topicsCtrl.delete)
+
+
 module.exports = router
