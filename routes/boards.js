@@ -7,6 +7,6 @@ router.get("/new", ensureLoggedIn, boardsCtrl.new);
 
 router.get('/:id/topics', boardsCtrl.index)
 
-router.post("/", boardsCtrl.create);
+router.post("/", ensureLoggedIn, boardsCtrl.create);
 
 module.exports = router;
