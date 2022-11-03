@@ -1,6 +1,5 @@
 /*TOPIC CONTAINER*/
 .topic-bg-container {
-    /* position: fixed; */
     width: 100%;
     height: 40vh;
 }
@@ -30,14 +29,10 @@ ul {
     background-color: rgb(255, 255, 255, 0.75);
     transition: var(--transition);
     flex-wrap: wrap;
-    /* background-color: var(--fg-color); */
-    /* background-image: url(''); */
-
 }
 
 .topic_link:hover {
     background-color: var(--gray);
-    /* padding: 0 0.5rem 0 0.5rem; */
 }
 
 .topic_face img {

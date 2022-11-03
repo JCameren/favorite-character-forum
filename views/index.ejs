@@ -1,20 +1,20 @@
 <%- include('./partials/header') %>
-<div id="stage">
-  <h1 class="banner_title">Grimoires</h1>
-  <p class="banner_caption">Place to post your favorite characters from games.</p>
-   <img src="/images/mara-sov-banner.jpg" alt="banner image" id="bg-image">
-  <img src="/images/riven-banner.jpg" alt="banner image" id="bg-image">
-</div>
-<div class="container">
-  <h2 class="board_title">Boards</h2>
-</div>
-<main class="board grid container">
-<% boards.forEach(function(board) { %>
-<a href="/boards/<%= board._id %>/topics" class="board_topic">
-  <h3 class="board_topic_overlay"><%= board.title %></h3>
-  <img src="<%= board.imageURL %>" alt="" />
-  <title><%= board.title %></title>
-</a>
-<% }) %> 
-</main>
+  <div id="stage">
+    <h1 class="banner_title">Grimoires</h1>
+    <p class="banner_caption">Place to post your favorite characters from games.</p>
+    <img src="/images/mara-sov-banner.jpg" alt="banner image" id="bg-image">
+    <img src="/images/riven-banner.jpg" alt="banner image" id="bg-image">
+  </div>
+  <div class="container">
+    <h2 class="board_title">Boards</h2>
+  </div>
+  <main class="board grid container">
+    <% boards.forEach(function(board) { %>
+      <a href="/boards/<%= board._id %>/topics" class="board_topic">
+      <h3 class="board_topic_overlay"><%= board.title %></h3>
+      <img src="<%= board.imageURL %>" alt="" />
+      <title><%= board.title %></title>
+      </a>
+    <% }) %> 
+  </main>
 <%- include('./partials/footer') %>

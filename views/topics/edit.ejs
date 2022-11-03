@@ -1,37 +1,37 @@
 <%- include('../partials/header') %>
-<div class="form_bg"></div>
-<main class="form_container">
-  <form action="/topics/<%= topic._id %>?_method=PUT" class="form" method="POST">
-    <h4><%= title %></h4>
-    <div class="form_input_container">
-      <label for="">Name:</label>
-      <input type="text" name="name" required value="<%= topic.name %>"/>
-    </div>
-    <div class="form_input_container">
-      <label for="">Image-url:</label>
-      <input type="text" name="imageURL" required value="<%= topic.imageURL %>"/>
-    </div>
-    <div class="form_input_container">
-      <label for="">Gender:</label>
-      <select name="gender" id="" required>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-    <div class="form_input_container">
-      <label for="">Age:</label>
-      <input type="number" name="age" value="<%= topic.age %>"/>
-    </div>
-    <div class="form_input_container">
-      <label for="">Description:</label>
-      <textarea type="text" name="description" required><%= topic.description %></textarea>
-    </div>
-    <button type="submit" class="edit_btn">Edit Topic</button>
-  </form>
-  <p class="disclaimer">
-    **Ensure image links have high resolution and are capable of taking up a
-    large amount of space for best results.
-  </p>
-</main>
+  <div class="form_bg"></div>
+  <main class="form_container">
+    <form action="/topics/<%= topic._id %>?_method=PUT" class="form" method="POST">
+      <h4><%= title %></h4>
+      <div class="form_input_container">
+        <label for="">Name:</label>
+        <input type="text" name="name" required value="<%= topic.name %>"/>
+      </div>
+      <div class="form_input_container">
+        <label for="">Image-url:</label>
+        <input type="text" name="imageURL" required value="<%= topic.imageURL %>"/>
+      </div>
+      <div class="form_input_container">
+        <label for="">Gender:</label>
+        <select name="gender" id="" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form_input_container">
+        <label for="">Age:</label>
+        <input type="number" name="age" value="<%= topic.age %>"/>
+      </div>
+      <div class="form_input_container">
+        <label for="">Description:</label>
+        <textarea type="text" name="description" required><%= topic.description %></textarea>
+      </div>
+      <button type="submit" class="edit_btn">Edit Topic</button>
+    </form>
+    <p class="disclaimer">
+      **Ensure image links have high resolution and are capable of taking up a
+      large amount of space for best results.
+    </p>
+  </main>
 <%- include('../partials/footer') %>

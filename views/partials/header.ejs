@@ -12,14 +12,14 @@
       <nav class="container flex-row">
         <a href="/">Logo</a>
         <ul>
-        <a href="/" <%- title === 'Home' ? 'class="active"' : 'disabled' %>>Home</a>
-        <% if (user) { %>
-        <a href="/boards/new" <%- title === 'New Board' ? 'class="active"' : 'disabled' %>>New Board</a>
-        <a href="/logout" class="btn">Log Out</a>
-          <img src="<%= user.avatar %>" alt="avatar" class="user_avatar" title="Logged in as <%= user.name %>">
-        <% } else { %>
-        <a href="/oauth/google" class="btn">Log In</a>
-        <% } %>
+          <a href="/" <%- title === 'Home' ? 'class="active"' : 'disabled' %>>Home</a>
+          <% if (user) { %>
+          <a href="/boards/new" <%- title === 'New Board' ? 'class="active"' : 'disabled' %>>New Board</a>
+          <a href="/logout" class="btn">Log Out</a>
+            <img src="<%= user.avatar %>" alt="avatar" class="user_avatar" title="Logged in as <%= user.name %>">
+          <% } else { %>
+          <a href="/oauth/google" class="btn">Log In</a>
+          <% } %>
       </ul>
       </nav>
     </header>
