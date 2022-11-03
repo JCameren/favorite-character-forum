@@ -5,63 +5,47 @@
 <div class="container">
   <h2 class="board_title"><%= title %> Characters</h2>
 </div>
-
+<div class="container">
+  <div class="form_btn_container">
+    <a href="/boards/<%= board._id %>/topics/new" class="btn"> + New Topic</a>
+  </div>
+</div>
 <% if (topics.length) { %>
 <div class="container">
   <ul>
     <% topics.forEach(function(topic) { %>
-    <li>
+    <li style="margin-bottom: 0.75rem">
       <a
         href="/boards/<%= board._id %>/topics/<%= topic._id %>"
         class="topic_link"
-      ><div style="display: flex; align-items: center">
+      >
+      <div class="flex_row">
         <section class="topic_face">
-          <!-- <h3><%= topic.name %></h3> -->
           <div>
           <img src="<%= topic.imageURL %>" alt="character image" />
         </section>
         <section class="topic_intro">
           <p><%= topic.name %></p>
-          <p><span><%= board.title %></span></p>
-          <p></p>
         </section>
       </div>
         <section class="topic_intro">
           <p>Comments</p>
           <p><span><%= topic.comments.length %></span></p>
         </section>
-        <!-- <% if (user?._id.equals(topic.user)) { %>
-          <section class="crud_btns_container">
-            <form
-          action="/boards/<%= board._id %>/topics/<%= topic._id %>?_method=DELETE"
-          method="POST"
-        >
-        <div style="background-color: red">
-          <a href="/topics/<%= topic._id %>/edit">EDIT TOPIC</a>
-        </div>
-          </section>
-        <% } %> -->
-        
       </a>
-      <!-- <% if (user?._id.equals(topic.user)) { %>
-      <div style="background-color: blue">
-        <form
-          action="/boards/<%= board._id %>/topics/<%= topic._id %>?_method=DELETE"
-          method="POST"
-        >
-          <button type="submit">DELETE TOPIC</button>
-        </form>
-      </div>
-      <div style="background-color: red">
-        <a href="/topics/<%= topic._id %>/edit">EDIT TOPIC</a>
-      </div>
-      <% } %> -->
-    </li>
+      <% if (user?._id.equals(topic.user)) { %>
+        <div class="form_btn_container" style="margin-top: 0;">
+          <form action="/boards/<%= board._id %>/topics/<%= topic._id %>?_method=DELETE" method="POST">
+            <button class="delete_btn">Delete Topic</button>
+          </form>
+          <a href="/topics/<%= topic._id %>/edit" class="edit_btn">Edit Topic</a>
+        </div>
+      <% } %>
+      </li>
     <% }) %>
-  </ul>
-</div>
-<% } else { %>
-<h3>No Topics.</h3>
+    </ul>
+    <% } else { %>
+    <h3 class="no_topic_header">No Topics.</h3>
+  </div>
 <% }%>
-<a href="/boards/<%= board._id %>/topics/new">NEW TOPIC</a>
 <%- include('../partials/footer') %>

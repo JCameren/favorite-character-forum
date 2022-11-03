@@ -23,6 +23,7 @@ const topicSchema = new Schema(
     },
     imageURL: {
       type: String,
+      required: true,
     },
     description: {
       type: String,
@@ -40,6 +41,7 @@ const topicSchema = new Schema(
     board: {
       type: Schema.Types.ObjectId,
       ref: "Board",
+      required: true,
     },
     user: {
       type: Schema.Types.ObjectId,

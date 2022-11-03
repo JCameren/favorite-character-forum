@@ -1,0 +1,193 @@
+.post_bg {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1rem;
+    position: fixed;
+    z-index: -999;
+    background-color: rgba(255, 255, 255, 0.75);
+    /* filter: blur(10px); */
+}
+
+.post_bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background-color:  rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+}
+
+.post_content {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.post_container {
+    display: grid;
+    place-items: center;
+    position: sticky;
+    top: 10px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    max-width: 30rem;
+    padding: 0.75rem;
+    float: left;
+    z-index: 998;
+    margin: 0.1rem;
+}
+
+.post_name {
+    text-transform: uppercase;
+    font-family: 'Futura Medium';
+    font-size: var(--font-md);
+}
+
+.post_container p {
+    display: inline-block;
+    /* border: 1px solid black; */
+    width: max-content;
+    margin-bottom: 0.5rem;
+    font-family: 'Futura Medium';
+}
+
+.post_avatar {
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    width: 25rem;
+    height: 25rem;
+    object-fit: cover;
+    object-position: center;
+    border: 6px solid white;
+    object-position: center;
+}
+
+.post_description {
+    max-width: 85rem;
+    font-family: 'Futura Light';
+    font-size: var(--font-sm);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    padding: 0.75rem;
+}
+
+.post_comment {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    padding: 0.75rem;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post_comment_content {
+    font-family: 'Futura Light';
+    font-style: italic;
+    font-size: var(--font-md);
+}
+
+.post_comment_owner img {
+    margin: auto;
+    
+}
+
+.post_comment_owner {
+    font-family: 'Futura Medium';
+}
+
+.crud_btns_container {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.delete_btn {
+    background-color: salmon;
+    border: 1px solid var(--red);
+    font-size: var(--font-xsm);
+    color: var(--red);
+    padding: 0.5rem;
+    font-family: 'Futura Book';
+    font-weight: 100;
+    border-radius: 10px;
+    min-width: 4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.25rem 0;
+}
+
+.edit_btn {
+    background-color: lightgoldenrodyellow;
+    border: 1px solid var(--yellow);
+    font-size: var(--font-xsm);
+    color: var(--yellow);
+    padding: 0.5rem;
+    font-family: 'Futura Book';
+    font-weight: 100;
+    border-radius: 10px;
+    min-width: 4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.25rem 0;
+}
+
+
+.comment_box {
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 2rem; */
+    width: 100%;
+    align-items: flex-end;
+    margin-top: 5rem;
+}
+
+.comment_box form {
+    width: 100%;
+}
+
+
+.comment_box textarea {
+    width: 100%;
+    resize: none;
+    font-size: var(--font-sm);
+    padding: 12px 20px;
+    outline: none;
+    border: none;
+    color: #171717;
+    margin-bottom: 0.5rem;
+    font-family: 'Futura Light';
+    border-radius: 16px;
+    position: relative;
+}
+
+.comment_box textarea::placeholder {
+    font-family: 'Futura Light';
+    color: lightgray;
+}
+
+.comment_box button {
+    /* justify-self: flex-end; */
+    margin: 0.5rem 0 3rem 0;
+}
+
+textarea:focus-within {
+    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+    border: none;
+}

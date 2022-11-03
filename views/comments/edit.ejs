@@ -1,10 +1,13 @@
 <%- include('../partials/header') %>
-
-<h1>Testing</h1>
-
-<form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
-<input type="text" value="<%= comment.post %>" name="post">
-<button type="submit">Edit Comment</button>
-</form>
+<div class="form_bg"></div>
+<main class="form_container">
+    <form action="/comments/<%= comment._id %>?_method=PUT" class="form" method="POST">
+        <h4><%= title %></h4>
+        <div class="form_input_container">
+            <textarea type="text" value="" name="post"><%= comment.post %></textarea>
+            <button class="edit_btn" type="submit">Edit Comment</button>
+        </div>
+    </form>
+</main>
 
 <%- include('../partials/footer') %>

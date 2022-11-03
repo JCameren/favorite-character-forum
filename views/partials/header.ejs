@@ -3,8 +3,9 @@
   <head>
     <title><%= title %> | Grimoires</title>
     <link rel="stylesheet" href="/stylesheets/index.css" />
-    <link rel="stylesheet" href="/stylesheets/topic.css" /> 
-<script src="https://kit.fontawesome.com/6d5f71839e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/topic.css" />
+    <link rel="stylesheet" href="/stylesheets/post.css" />
+    <link rel="stylesheet" href="/stylesheets/form.css" />
   </head>
   <body>
     <header class="nav_wrapper">
@@ -14,10 +15,10 @@
         <a href="/" <%- title === 'Home' ? 'class="active"' : 'disabled' %>>Home</a>
         <% if (user) { %>
         <a href="/boards/new" <%- title === 'New Board' ? 'class="active"' : 'disabled' %>>New Board</a>
-        <a href="/logout" id="btn">Log Out</a>
+        <a href="/logout" class="btn">Log Out</a>
           <img src="<%= user.avatar %>" alt="avatar" class="user_avatar" title="Logged in as <%= user.name %>">
         <% } else { %>
-        <a href="/oauth/google" id="btn">Log In</a>
+        <a href="/oauth/google" class="btn">Log In</a>
         <% } %>
       </ul>
       </nav>

@@ -90,6 +90,11 @@ a {
   pointer-events: none;
 }
 
+#green {
+  background-color: linear-gradient(92.88deg, darkgreen 9.16, green 43.89%, lightgreen 64.72%) !important;
+  box-shadow: #00ab41;
+}
+
 /*FLEXROW CLASS*/
 .flex_row {
   display: flex;
@@ -98,12 +103,12 @@ a {
 }
 
 /* BUTTON CLASS */
-#btn {
+.btn {
   background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
   border-radius: 16px;
   border-style: none;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   cursor: pointer;
   flex-shrink: 0;
   font-family: "Futura Medium";
@@ -118,9 +123,10 @@ a {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  max-width: max-content;
 }
 
-#btn:hover {
+.btn:hover {
   box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
   transition-duration: .1s;
 }
@@ -227,7 +233,7 @@ a {
 }
 
 
-.nav_wrapper .user_avatar {
+.user_avatar {
   margin-left: 1.5rem;
   border-radius: 50%;
   width: 2.5rem;

@@ -1,9 +1,24 @@
 <%- include('../partials/header') %>
-<form action="/boards" method="POST">
-  <label>Name of the Board:</label>
-  <input type="text" name="title" />
-  <label>Provide an Image URL for the Banner:</label>
-  <input type="text" name="imageURL" />
-  <button type="submit">ADD BOARD</button>
-</form>
+<div class="form_bg"></div>
+<main class="form_container">
+  <form action="/boards" method="POST" class="form">
+    <h4><%= title %></h4>
+    <div class="form_input_container">
+      <label>Name of the Board:</label>
+      <input type="text" name="title" required />
+    </div>
+    <div class="form_input_container">
+      <label>Provide an Image URL for the Banner:</label>
+      <input type="text" name="imageURL" required />
+    </div>
+    <div class="form_btn_container">
+      <button class="btn" type="submit">ADD BOARD</button>
+    </div>
+  </form>
+  <p class="disclaimer">
+    **Ensure image links have high resolution and are capable of taking up a large
+    amount of space for best results.
+  </p>
+</main>
+
 <%- include('../partials/footer') %>

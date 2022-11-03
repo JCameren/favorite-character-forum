@@ -1,0 +1,136 @@
+.form_bg {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1rem;
+    position: fixed;
+    z-index: -999;
+    /* background-color: rgba(255, 255, 255, 0.65); */
+    background-image: url('/images/riven-banner.jpg');
+    /* filter: blur(10px); */
+}
+
+.form_bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background-color:  rgba(255, 255, 255, 0.75);
+    /* backdrop-filter: blur(10px); */
+}
+
+.form_container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.form {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0.75rem;
+    padding: 32px 40px;
+    margin: 12px;
+}
+
+.form input {
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 12px 12px;
+  /* box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+  background: rgba( 255, 255, 255, 0.15 );
+  /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+  backdrop-filter: blur( 9.5px );
+  -webkit-backdrop-filter: blur( 9.5px );
+  border-radius: 10px;
+  color: #171717;
+  caret-color: gray;
+  width: 100%;
+  font-size: var(--font-sm);
+  padding: 12px 20px;
+  outline: none;
+  color: #171717;
+  font-family: 'Futura Light';
+}
+
+.form label {
+    font-size: var(--font-md);
+    font-family: 'Futura Light';
+    font-weight: 100;
+    line-height: 1.7;
+}
+
+/* .form input:focus {
+    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+} */
+
+.form h4 {
+    font-size: var(--font-lg);
+    text-transform: uppercase;
+    text-align: center !important;
+    font-family: 'Futura Bold';
+}
+
+.form_input_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.form_btn_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.form textarea {
+    width: 600px;
+    resize: none;
+    font-size: var(--font-sm);
+    padding: 12px 20px;
+    outline: none;
+    color: #171717;
+    margin-bottom: 0.5rem;
+    font-family: 'Futura Light';
+    border-radius: 16px;
+    position: relative;
+    border: 1px solid lightgray;
+    min-height: 300px;
+}
+
+.disclaimer {
+    border: 1px solid var(--yellow);
+    background-color: lightyellow;
+    color: var(--yellow);
+    font-size: var(--font-md);
+    font-family: 'Futura Light';
+    padding: 0.75rem;
+    width: max-content;
+    margin: 0.75rem 0;
+}
+
+.no_topic_header {
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Futura Medium';
+    font-size: var(--font-lg);
+    text-transform: uppercase;
+    color: var(--primary-accent);
+}

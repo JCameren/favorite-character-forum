@@ -1,37 +1,47 @@
 <%- include('../partials/header') %>
-
-<p><%= topic.name %></p>
-<img src="<%= topic.imageURL %>" alt="character avatar">
-<p><%= topic.age %></p>
-<p><%= topic.gender %></p>
-<p><%= topic.description %></p>
-<% if(user) { %>
-    <h3>Add Comment</h3>
-    <form action="/topics/<%= topic._id %>/comment" method="POST">
-        <textarea name="post""></textarea>
-        <button type="submit">Submit Comment</button>
-    </form>
-<% } else { %>
-    <h3>Must sign in to add a review.</h3>
-<% } %>
-
+<div class="post_bg" style="background-image: url('<%= topic.imageURL %>')" ></div>
+    <main class="post_content">
+<section class="post_container">
+    <img src="<%= topic.imageURL %>" alt="character image" class="post_avatar">
+    <p><span class="post_name"><%= topic.name %></span></span></p>
+    <p><%= topic.gender %></p>
+    <p><%= topic.age %></p>
+</section>
+<p class="post_description"><%= topic.description %></p>
+</main>
+<div class="container">
 <% if (topic.comments.length) { %>
-<% topic.comments.forEach(function(comment) { %>
-    <div style="background-color: green;">
-    <img src="<%= comment.userAvatar %>" alt="avatar" referrerpolicy="no-referrer">
-    <p><%= comment.userName %></p>
-    <p><%= comment.post %></p>
-    <% if(user?._id.equals(comment.user)) { %>
-        <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-            <button>DELETE</button>
-        </form>
-        <a href="/comments/<%= comment._id %>/edit">EDIT</a>
+    <h3 class="board_title">Comments</h3>
+    <% topic.comments.forEach(function(comment) { %>
+        <div class="post_comment">
+            <div class="post_comment_owner">
+                <img src="<%= comment.userAvatar %>" alt="avatar" referrerpolicy="no-referrer" class="user_avatar">
+                <p><%= comment.userName %></p>
+            </div>
+        <p class="post_comment_content"><%= comment.post %></p>
+        <% if(user?._id.equals(comment.user)) { %>
+            <div class="crud_btns_container">
+                <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                    <button class="delete_btn">DELETE</button>
+                </form>
+                <a href="/comments/<%= comment._id %>/edit" class="edit_btn">EDIT</a>
+            </div>
+        <% } %>
+    </div>
+    <% }) %>
+    <% } else { %>
+    <h3 class="board_title">No comments yet. Be the first!</h3>
     <% } %>
+    </div>
+<% if(user) { %>
+<div class="container flex_row" style="align-items: flex-start;">
+    <form action="/topics/<%= topic._id %>/comment" method="POST" class="comment_box">
+        <textarea name="post" placeholder="Comment here as <%= user.name %>" required></textarea>
+        <button type="submit" class="btn" >Submit Comment</button>
+    </form>
 </div>
-<% }) %>
 <% } else { %>
-<h3>No comments yet. Be the first!</h3>
+    <h3 class="no_topic_header">Must sign in to add a comment.</h3>
 <% } %>
-
 
 <%- include('../partials/footer') %>

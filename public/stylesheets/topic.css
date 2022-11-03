@@ -31,6 +31,7 @@ ul {
     transition: var(--transition);
     flex-wrap: wrap;
     /* background-color: var(--fg-color); */
+    /* background-image: url(''); */
 
 }
 
@@ -60,9 +61,4 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-}
-
-.fa-regular fa-trash-can {
-    color: red;
-    font-size: var(--font-sm);
 }
