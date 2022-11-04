@@ -70,7 +70,8 @@
 }
 
 .post_description {
-    max-width: 85rem;
+    width: -webkit-fill-available;
+    height: max-content;
     font-family: 'Futura Light';
     font-size: var(--font-sm);
     backdrop-filter: blur(16px) saturate(180%);
